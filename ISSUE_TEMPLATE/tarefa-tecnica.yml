@@ -1,0 +1,37 @@
+name: Tarefa técnica
+description: Refatoração, infraestrutura, CI, dependências ou documentação
+title: "chore: "
+labels: ["tarefa-tecnica"]
+body:
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Por que fazer
+    validations:
+      required: true
+  - type: textarea
+    id: mudanca
+    attributes:
+      label: O que muda
+    validations:
+      required: true
+  - type: textarea
+    id: riscos
+    attributes:
+      label: Riscos e como reverter
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade
+      options:
+        - P0 - bloqueia o uso ou envolve segurança
+        - P1 - importante, entra no próximo ciclo
+        - P2 - pode esperar
+    validations:
+      required: true
+  - type: textarea
+    id: aceite
+    attributes:
+      label: Critério de aceite
+    validations:
+      required: true

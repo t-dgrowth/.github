@@ -1,0 +1,41 @@
+name: Feature
+description: Nova funcionalidade ou melhoria
+title: "feat: "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema
+      description: Qual necessidade isto resolve e para quem?
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta
+    validations:
+      required: true
+  - type: textarea
+    id: fora-do-escopo
+    attributes:
+      label: Fora do escopo
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade
+      options:
+        - P0 - bloqueia o uso ou envolve segurança
+        - P1 - importante, entra no próximo ciclo
+        - P2 - pode esperar
+    validations:
+      required: true
+  - type: textarea
+    id: aceite
+    attributes:
+      label: Critério de aceite
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
