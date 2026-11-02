@@ -16,6 +16,12 @@ Nunca faça push na `main`. Ative a validação local uma vez em cada clone com 
 
 O CI roda em PR. A `main` é validada semanalmente ou manualmente antes de uma tag. Todo job precisa de `timeout-minutes`.
 
+A cota é de 2.000 min/mês para a org inteira, e cada push num PR aberto roda o CI de novo. Por isso:
+
+- Trabalhe com commits locais e dê um push só, quando a mudança estiver pronta e `make verify` passar. O hook `pre-push` (`make hooks`) roda `make verify` e recusa o push se falhar.
+- Junte as correções pedidas na revisão num único push.
+- O consumo do mês é acompanhado com `scripts/cota_actions.py`, que desliga workflows de menor prioridade antes de a cota acabar.
+
 ## Títulos de PR
 
 Use Conventional Commits: `tipo(área): descrição`.
